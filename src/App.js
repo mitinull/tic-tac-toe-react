@@ -7,7 +7,7 @@ class App extends Component {
 
   // create state for the board
   state = {
-    board: ['X', '', '','','','','','',''],
+    board: ['', '', '','','','','','',''],
     player: 'X',
     winner: '',
     gameOver: false
@@ -24,7 +24,7 @@ class App extends Component {
       this.setState({
         board: newBoard
       });
-      // this.checkWinner();
+      this.checkWinner();
       this.changePlayer();
     }
   }
@@ -41,6 +41,36 @@ class App extends Component {
       });
     }
   }
+
+  // check if there is a winner
+  checkWinner = () => {
+    let board = this.state.board;
+    let winner = '';
+    if (board[0] === board[1] && board[1] === board[2] && board[0] !== '') {
+      winner = board[0];
+    } else if (board[3] === board[4] && board[4] === board[5] && board[3] !== '') {
+      winner = board[3];
+    } else if (board[6] === board[7] && board[7] === board[8] && board[6] !== '') {
+      winner = board[6];
+    } else if (board[0] === board[3] && board[3] === board[6] && board[0] !== '') {
+      winner = board[0];
+    } else if (board[1] === board[4] && board[4] === board[7] && board[1] !== '') {
+      winner = board[1];
+    } else if (board[2] === board[5] && board[5] === board[8] && board[2] !== '') {
+      winner = board[2];
+    } else if (board[0] === board[4] && board[4] === board[8] && board[0] !== '') {
+      winner = board[0];
+    } else if (board[2] === board[4] && board[4] === board[6] && board[2] !== '') {
+      winner = board[2];
+    } else if (board.every(cell => cell !== '')) {
+      winner = 'tie';
+    }
+    this.setState({
+      winner: winner,
+      gameOver: (winner==='')?false:true,
+    });
+  }
+
 
   render() {
     return (
