@@ -1,39 +1,72 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      
-      <header className="App-header">
-        <div className="title-logo">
-          <div className="App-logo">
-            <div className="App-logo-inner1">
-              <div className="App-logo-inner1-inner1"></div>
-              <div className="App-logo-inner1-inner2"></div>
+const CELL_NUMS=[7,8,9,4,5,6,1,2,3];
+
+class App extends Component {
+
+  // create state for the board
+  state = {
+    board: ['X', '', '','','','','','',''],
+    player: 'X',
+    winner: '',
+    gameOver: false
+  }
+
+  // add a player to the board
+  add = (index) => {
+    if (this.state.gameOver) {
+      return;
+    }
+    if (this.state.board[index] === '') {
+      let newBoard = this.state.board;
+      newBoard[index] = this.state.player;
+      this.setState({
+        board: newBoard
+      });
+      // this.checkWinner();
+      // this.changePlayer();
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        
+        <header className="App-header">
+          {/* LOGO & TITLE */}
+          <div className="title-logo">
+            {/* LOGO */}
+            <div className="App-logo">
+              <div className="App-logo-inner1">
+                <div className="App-logo-inner1-inner1"></div>
+                <div className="App-logo-inner1-inner2"></div>
+              </div>
+              <div className="App-logo-inner2">
+                <div className="App-logo-inner2-inner1"></div>
+                <div className="App-logo-inner2-inner2"></div>
+              </div>
             </div>
-            <div className="App-logo-inner2">
-              <div className="App-logo-inner2-inner1"></div>
-              <div className="App-logo-inner2-inner2"></div>
-            </div>
+            {/* TITLE */}
+            <span id="title">Tic-Tac-Toe</span>
           </div>
-          <span id="title">Tic-Tac-Toe</span>
-        </div>
-        <div id="board">
-          <div id="cell1" className="cell"><span>7</span></div>
-          <div id="cell2" className="cell"><span>8</span></div>
-          <div id="cell3" className="cell"><span>9</span></div>
-          <div id="cell4" className="cell"><span>4</span></div>
-          <div id="cell5" className="cell"><span>5</span></div>
-          <div id="cell6" className="cell"><span>6</span></div>
-          <div id="cell7" className="cell"><span>1</span></div>
-          <div id="cell8" className="cell"><span>2</span></div>
-          <div id="cell9" className="cell"><span>3</span></div>
-        </div>
-      </header>
-      
-    </div>
-  );
+
+          {/* BOARD */}
+          <div id="board">
+            {this.state.board.map((square, index) => 
+              <div className="cell" onClick={()=>this.add(index)}>
+                <span>{CELL_NUMS[index]}</span>
+                <div class="cell-content">
+                  {this.state.board[index]}
+                </div>
+              </div>
+            )}
+          </div>
+        </header>
+        
+      </div>
+    );
+  }
 }
 
 export default App;
