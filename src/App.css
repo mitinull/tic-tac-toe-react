@@ -12,8 +12,7 @@
   pointer-events: none;
   background-color: transparent;
   border-radius: 50%;
-  border: .75vmin solid white;
-  margin-top: .4vmin;
+  border: .75vmin solid #b0b8b4;
   justify-content: center;
   align-items: center;
 }
@@ -22,7 +21,8 @@
   margin-left: 1.7vmin;
   font-size: 5vmin;
   font-weight: bolder;
-  color: white;
+  color: #b0b8b4;
+  font-family: sans-serif;
 }
 
 .App-logo-inner1 {
@@ -31,7 +31,7 @@
   left: -.5vmin;
   height: .75vmin;
   width: 5vmin;
-  background-color: white;
+  background-color: #b0b8b4;
 }
 .App-logo-inner2 {
   position: absolute;
@@ -39,7 +39,7 @@
   left: 1.625vmin;
   height: 5vmin;
   width: .75vmin;
-  background-color: white;
+  background-color: #b0b8b4;
 }
 
 .App-logo-inner1-inner1 {
@@ -48,7 +48,7 @@
   left: -.5vmin;
   height: .75vmin;
   width: 4vmin;
-  background-color: #282c34;
+  background-color: #184A45;
 }
 .App-logo-inner1-inner2 {
   position: absolute;
@@ -56,7 +56,7 @@
   left: 1.5vmin;
   height: .75vmin;
   width: 4vmin;
-  background-color: #282c34;
+  background-color: #184A45;
 }
 .App-logo-inner2-inner1 {
   position: absolute;
@@ -64,7 +64,7 @@
   left: .75vmin;
   height: 2vmin;
   width: .75vmin;
-  background-color: #282c34;
+  background-color: #184A45;
 }
 .App-logo-inner2-inner2 {
   position: absolute;
@@ -72,7 +72,7 @@
   left: -.75vmin;
   height: 2vmin;
   width: .75vmin;
-  background-color: #282c34;
+  background-color: #184A45;
 }
 
 #board {
@@ -84,8 +84,8 @@
 
 .cell {
   position: relative;
-  background-color: white;
-  color: #282c34;
+  background-color: #b0b8b4;
+  color: #184A45;
   font-size: 2vmin;
   width: 18vmin;
   height: 18vmin;
@@ -96,8 +96,7 @@
   left: 2vmin;
 }
 .cell:hover {
-  background-color: #282c34;
-  color: white;
+  background-color: #FC766A;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -107,14 +106,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #184A45;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #b0b8b4;
 }
 
 .App-link {
