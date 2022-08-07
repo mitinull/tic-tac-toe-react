@@ -25,7 +25,20 @@ class App extends Component {
         board: newBoard
       });
       // this.checkWinner();
-      // this.changePlayer();
+      this.changePlayer();
+    }
+  }
+
+  // change the player
+  changePlayer = () => {
+    if (this.state.player === 'X') {
+      this.setState({
+        player: 'O'
+      });
+    } else {
+      this.setState({
+        player: 'X'
+      });
     }
   }
 
