@@ -71,6 +71,17 @@ class App extends Component {
     });
   }
 
+  // reset the board
+  reset = () => {
+    this.setState({
+      board: ['', '', '','','','','','',''],
+      player: 'X',
+      winner: '',
+      gameOver: false,
+      multyplayer: false,
+    });
+  }
+
 
   render() {
     return (
@@ -92,6 +103,23 @@ class App extends Component {
             </div>
             {/* TITLE */}
             <span id="title">Tic-Tac-Toe</span>
+          </div>
+
+          {/* single or multiplayer buttons */}
+          <div className='buttons'>
+            <button id='ipbut' className='but' onClick={() => {
+              this.reset();
+              this.setState({
+                multyplayer: false
+              }
+            )}}>1 Player</button>
+            <button id='iipbut' className='but' onClick={() => {
+              this.reset();
+              this.setState({
+                multyplayer: true
+              }
+            )}
+            }>2 Player</button>
           </div>
 
           {/* BOARD */}

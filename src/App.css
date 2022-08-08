@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
 }
 
 .title-logo {
@@ -106,12 +107,6 @@
   transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #184A45;
   min-height: 100vh;
@@ -125,6 +120,24 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.but {
+  background-color: #b0b8b4;
+  color: #184A45;
+  border: 0;
+  margin: 1vmin;
+  border-radius: 1vmin;
+}
+
+.but:hover {
+  background-color: #FC766A;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
