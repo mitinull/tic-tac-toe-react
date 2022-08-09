@@ -114,7 +114,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 2vmin;
   color: #b0b8b4;
 }
 
@@ -124,9 +124,12 @@
 
 .but {
   background-color: #b0b8b4;
+  height: 3.5vmin;
+  width: 15vmin;
+  font-size: 2vmin;
   color: #184A45;
   border: 0;
-  margin: 1vmin;
+  margin: 2vmin 1vmin 0vmin 1vmin;
   border-radius: 1vmin;
 }
 
