@@ -27,6 +27,9 @@ class App extends Component {
       this.checkWinner();
       this.changePlayer();
     }
+    if (!this.state.multyplayer) {
+      setTimeout(this.addBot, 0)
+    }
   }
 
   // add a bot to the board
@@ -34,25 +37,31 @@ class App extends Component {
     if (this.state.gameOver) {
       return;
     }
-    const empty_inexes = this.state.board.map((square, index) => {
-      // if (square === '') {
-      //   return index;
-      // }
-    })//.filter(index => index !== undefined);
-    // let index = Math.floor(Math.random() * empty_inexes.length);
-    // if (this.state.board[empty_inexes[index]] === '') {
-    //   let newBoard = this.state.board;
-    //   newBoard[empty_inexes[index]] = this.state.player;
-    //   this.setState({
-    //     board: newBoard
-    //   });
-    //   this.checkWinner();
-    //   this.changePlayer();
-    // }
-    // else {
-    //   //throw error no empty cell
-    //   // console.error('no empty cell');
-    // }
+    const empty_inexes = []
+    this.state.board.forEach((square, index) => {
+      if (square === '') {
+        empty_inexes.push(index);
+      }
+    } )
+    //  = this.state.board.map((square, index) => {
+    //   // if (square === '') {
+    //   //   return index;
+    //   // }
+    // })//.filter(index => index !== undefined);
+    let index = Math.floor(Math.random() * empty_inexes.length);
+    if (this.state.board[empty_inexes[index]] === '') {
+      let newBoard = this.state.board;
+      newBoard[empty_inexes[index]] = this.state.player;
+      this.setState({
+        board: newBoard
+      });
+      this.checkWinner();
+      this.changePlayer();
+    }
+    else {
+      //throw error no empty cell
+      // console.error('no empty cell');
+    }
   }
 
   // change the player
