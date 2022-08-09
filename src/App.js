@@ -31,28 +31,28 @@ class App extends Component {
 
   // add a bot to the board
   addBot = () => {
-    if (this.state.gameOver) {
-      return;
-    }
-    let empty_inexes = this.state.board.map((square, index) => {
-      if (square === '') {
-        return index;
-      }
-    }).filter(index => index !== undefined);
-    let index = Math.floor(Math.random() * empty_inexes.length);
-    if (this.state.board[empty_inexes[index]] === '') {
-      let newBoard = this.state.board;
-      newBoard[empty_inexes[index]] = this.state.player;
-      this.setState({
-        board: newBoard
-      });
-      this.checkWinner();
-      this.changePlayer();
-    }
-    else {
-      //throw error no empty cell
-      // console.error('no empty cell');
-    }
+    // if (this.state.gameOver) {
+    //   return;
+    // }
+    // let empty_inexes = this.state.board.map((square, index) => {
+    //   if (square === '') {
+    //     return index;
+    //   }
+    // }).filter(index => index !== undefined);
+    // let index = Math.floor(Math.random() * empty_inexes.length);
+    // if (this.state.board[empty_inexes[index]] === '') {
+    //   let newBoard = this.state.board;
+    //   newBoard[empty_inexes[index]] = this.state.player;
+    //   this.setState({
+    //     board: newBoard
+    //   });
+    //   this.checkWinner();
+    //   this.changePlayer();
+    // }
+    // else {
+    //   //throw error no empty cell
+    //   // console.error('no empty cell');
+    // }
   }
 
   // change the player
