@@ -143,22 +143,22 @@ class App extends Component {
           <div className='buttons'>
             <button id='ipbut' className='but'
             style={{backgroundColor: !this.state.multyplayer? '#FC766A' : '' }} onClick={() => {
-              this.reset();
+              if (this.state.multyplayer){this.reset();}
               this.setState({
                 multyplayer: false
               }
-            )}}>👤 Player
+            )}}>👤 1Player
             {!this.state.multyplayer && ''}
             </button>
             <button id='iipbut' className='but'
             style={{backgroundColor: this.state.multyplayer? '#FC766A' : '' }} onClick={() => {
-              this.reset();
+              if (!this.state.multyplayer){this.reset();}
               this.setState({
                 multyplayer: true
               }
             )}
-            }>👥 Player  </button>
-            <button id='iipbut' className='but' onClick={() => {
+            }>👥 2Player  </button>
+            <button id='rbut' className='but' onClick={() => {
               this.reset();}
             }>Reset</button>
           </div>
