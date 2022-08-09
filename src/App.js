@@ -1,6 +1,9 @@
 import './App.css';
 import React, { Component } from 'react';
 
+const setTheme = theme => document.documentElement.className = theme;
+const themes = ['theme1', 'theme2', 'theme3'];
+let themeIndex = 0;
 const CELL_NUMS=[7,8,9,4,5,6,1,2,3];
 
 class App extends Component {
@@ -142,7 +145,7 @@ class App extends Component {
           {/* single or multiplayer buttons */}
           <div className='buttons'>
             <button id='ipbut' className='but'
-            style={{backgroundColor: !this.state.multyplayer? '#FC766A' : '' }} onClick={() => {
+            style={{backgroundColor: !this.state.multyplayer? 'var(--select-color)' : '' }} onClick={() => {
               if (this.state.multyplayer){this.reset();}
               this.setState({
                 multyplayer: false
@@ -151,16 +154,19 @@ class App extends Component {
             {!this.state.multyplayer && ''}
             </button>
             <button id='iipbut' className='but'
-            style={{backgroundColor: this.state.multyplayer? '#FC766A' : '' }} onClick={() => {
+            style={{backgroundColor: this.state.multyplayer? 'var(--select-color)' : '' }} onClick={() => {
               if (!this.state.multyplayer){this.reset();}
               this.setState({
-                multyplayer: true
-              }
-            )}
+                multyplayer: true,
+              })
+            }
             }>👥 2Player  </button>
             <button id='rbut' className='but' onClick={() => {
               this.reset();}
             }>Reset</button>
+            <button id='tbut' className='but' onClick={() => {
+              setTheme(themes[(++themeIndex)%3]);}
+            }>theme</button>
           </div>
 
           {/* BOARD */}
