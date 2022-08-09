@@ -35,9 +35,9 @@ class App extends Component {
       return;
     }
     const empty_inexes = this.state.board.map((square, index) => {
-      if (square === '') {
-        return index;
-      }
+      // if (square === '') {
+      //   return index;
+      // }
     })//.filter(index => index !== undefined);
     // let index = Math.floor(Math.random() * empty_inexes.length);
     // if (this.state.board[empty_inexes[index]] === '') {
