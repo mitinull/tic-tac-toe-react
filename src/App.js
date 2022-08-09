@@ -27,35 +27,6 @@ class App extends Component {
       this.checkWinner();
       this.changePlayer();
     }
-    if (!this.state.multyplayer) {
-      setTimeout(this.addBot, 0)
-    }
-  }
-
-  // add a bot to the board
-  addBot = () => {
-    if (this.state.gameOver) {
-      return;
-    }
-    let empty_inexes = this.state.board.map((square, index) => {
-      if (square === '') {
-        return index;
-      }
-    }).filter(index => index !== undefined);
-    let index = Math.floor(Math.random() * empty_inexes.length);
-    if (this.state.board[empty_inexes[index]] === '') {
-      let newBoard = this.state.board;
-      newBoard[empty_inexes[index]] = this.state.player;
-      this.setState({
-        board: newBoard
-      });
-      this.checkWinner();
-      this.changePlayer();
-    }
-    else {
-      //throw error no empty cell
-      console.error('no empty cell');
-    }
   }
 
   // change the player
@@ -107,7 +78,7 @@ class App extends Component {
       player: 'X',
       winner: '',
       gameOver: false,
-      multyplayer: true,
+      multyplayer: false,
     });
   }
 
@@ -141,22 +112,22 @@ class App extends Component {
               this.setState({
                 multyplayer: false
               }
-            )}}>1 Player {!this.state.multyplayer && '*'}</button>
+            )}}>1 Player {!this.state.multyplayer && '*'} </button>
             <button id='iipbut' className='but' onClick={() => {
               this.reset();
               this.setState({
                 multyplayer: true
               }
             )}
-            }>2 Player {this.state.multyplayer && '*'}</button>
+            }>2 Player {this.state.multyplayer && '*'} </button>
           </div>
 
           {/* BOARD */}
           <div id="board">
             {this.state.board.map((square, index) => 
-              <div key={index} className="cell" onClick={()=>this.add(index)}>
+              <div className="cell" onClick={()=>this.add(index)}>
                 <span>{CELL_NUMS[index]}</span>
-                <div className="cell-content">
+                <div class="cell-content">
                   {this.state.board[index]}
                 </div>
               </div>
