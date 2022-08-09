@@ -34,7 +34,7 @@ class App extends Component {
     if (this.state.gameOver) {
       return;
     }
-    let empty_inexes = this.state.board.map((square, index) => {
+    const empty_inexes = this.state.board.map((square, index) => {
       if (square === '') {
         return index;
       }
