@@ -125,9 +125,9 @@ class App extends Component {
           {/* BOARD */}
           <div id="board">
             {this.state.board.map((square, index) => 
-              <div className="cell" onClick={()=>this.add(index)}>
+              <div className="cell" key={index} onClick={()=>this.add(index)}>
                 <span>{CELL_NUMS[index]}</span>
-                <div class="cell-content">
+                <div className="cell-content">
                   {this.state.board[index]}
                 </div>
               </div>
