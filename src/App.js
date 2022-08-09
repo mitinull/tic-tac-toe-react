@@ -51,7 +51,7 @@ class App extends Component {
     }
     else {
       //throw error no empty cell
-      console.error('no empty cell');
+      // console.error('no empty cell');
     }
   }
 
