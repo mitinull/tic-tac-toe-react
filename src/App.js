@@ -113,7 +113,6 @@ class App extends Component {
       player: 'X',
       winner: '',
       gameOver: false,
-      multyplayer: false,
     });
   }
 
@@ -142,19 +141,26 @@ class App extends Component {
 
           {/* single or multiplayer buttons */}
           <div className='buttons'>
-            <button id='ipbut' className='but' onClick={() => {
+            <button id='ipbut' className='but'
+            style={{backgroundColor: !this.state.multyplayer? '#FC766A' : '' }} onClick={() => {
               this.reset();
               this.setState({
                 multyplayer: false
               }
-            )}}>1 Player {!this.state.multyplayer && '*'} </button>
-            <button id='iipbut' className='but' onClick={() => {
+            )}}>👤 Player
+            {!this.state.multyplayer && ''}
+            </button>
+            <button id='iipbut' className='but'
+            style={{backgroundColor: this.state.multyplayer? '#FC766A' : '' }} onClick={() => {
               this.reset();
               this.setState({
                 multyplayer: true
               }
             )}
-            }>2 Player {this.state.multyplayer && '*'} </button>
+            }>👥 Player  </button>
+            <button id='iipbut' className='but' onClick={() => {
+              this.reset();}
+            }>Reset</button>
           </div>
 
           {/* BOARD */}
@@ -163,7 +169,7 @@ class App extends Component {
               <div className="cell" key={index} onClick={()=>this.add(index)}>
                 <span>{CELL_NUMS[index]}</span>
                 <div className="cell-content">
-                  {this.state.board[index]}
+                  {square}
                 </div>
               </div>
             )}
