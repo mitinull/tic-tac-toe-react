@@ -11,8 +11,8 @@
 }
 :root.theme3 {
   --bg-color: #D3D0CBFF;
-  --item-color: rgb(65, 102, 122);
-  --select-color: rgb(100, 93, 188);
+  --item-color: rgb(27, 113, 159);
+  --select-color: rgb(56, 131, 36);
 }
 
 .App {
