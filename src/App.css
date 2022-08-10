@@ -5,14 +5,14 @@
   --select-color: #FC766A;
 }
 :root.theme2 {
-  --bg-color: #E683A9FF;
-  --item-color: #FFBA52FF;
-  --select-color: #F6EA7BFF;
-}
-:root.theme3 {
   --bg-color: #28334AFF;
   --item-color: #F65058FF;
   --select-color: #FBDE44FF;
+}
+:root.theme3 {
+  --bg-color: #D3D0CBFF;
+  --item-color: rgb(65, 102, 122);
+  --select-color: rgb(100, 93, 188);
 }
 
 .App {
