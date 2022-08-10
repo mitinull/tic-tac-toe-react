@@ -213,8 +213,8 @@ class App extends Component {
             )}
           </div>
 
-{/* buttons */}
-          <div className='buttons' dir={(this.state.language==='en')?'ltr':'rtl'}>
+          {/* bottom buttons */}
+          <div className='buttons bottombuttons' dir={(this.state.language==='en')?'ltr':'rtl'}>
             
             {/* change theme button */}
             <button id='tbut' className='but' onClick={() => {

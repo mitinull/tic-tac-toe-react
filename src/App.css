@@ -22,7 +22,7 @@
 
 .title-logo {
   display: flex;
-  margin-top: 2vmin;
+  margin-top: 4vmin;
 }
 
 .App-logo {
@@ -142,8 +142,12 @@
 }
 
 .buttons {
-  margin-top: 1vmin;
   width: 55vmin;
+}
+
+.bottombuttons {
+  margin-top: 1vmin;
+  margin-bottom: 3vmin;
 }
 
 .but {
