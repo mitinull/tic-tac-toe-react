@@ -47,10 +47,11 @@ class App extends Component {
       });
       this.checkWinner();
       this.changePlayer();
+      if (!this.state.multyplayer) {
+        setTimeout(this.addBot, 0)
+      }
     }
-    if (!this.state.multyplayer) {
-      setTimeout(this.addBot, 0)
-    }
+   
   }
 
   // add a bot to the board
