@@ -97,7 +97,7 @@
   display: grid;
   gap: 1.7vmin;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 5vmin;
+  margin-top: 3vmin;
 }
 
 .cell {
@@ -142,14 +142,15 @@
 }
 
 .buttons {
+  margin-top: 1vmin;
   width: 55vmin;
 }
 
 .but {
   background-color: var(--item-color);
-  height: 4.3vmin;
-  width: 15vmin;
-  font-size: 2vmin;
+  height: 5vmin;
+  width: 16vmin;
+  font-size: 3vmin;
   color: var(--bg-color);
   border: 0;
   margin: 2vmin 1vmin 0vmin 1vmin;
