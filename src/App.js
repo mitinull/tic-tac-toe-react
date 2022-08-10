@@ -188,16 +188,17 @@ class App extends Component {
             }>{this.content[this.state.language].button3}</button>
 
             {/* change theme button */}
-            <button id='tbut' className='but' onClick={() => {
+            {/* <button id='tbut' className='but' onClick={() => {
               setTheme(themes[(++themeIndex)%3]);}
-            }>{this.content[this.state.language].button4}</button>
+            }>{this.content[this.state.language].button4}</button> */}
 
             {/* change language button */}
-            <button id='lbut' className='but' onClick={() => {
+            {/* <button id='lbut' className='but' onClick={() => {
               this.setState({
                 language: (this.state.language === 'en') ? 'fa' : 'en',
               })
-            }}>{this.content[this.state.language].button5}</button>
+            }}>{this.content[this.state.language].button5}
+            </button> */}
           </div>
 
           {/* BOARD */}
@@ -211,6 +212,23 @@ class App extends Component {
               </div>
             )}
           </div>
+
+{/* buttons */}
+          <div className='buttons' dir={(this.state.language==='en')?'ltr':'rtl'}>
+            
+            {/* change theme button */}
+            <button id='tbut' className='but' onClick={() => {
+              setTheme(themes[(++themeIndex)%3]);}
+            }>{this.content[this.state.language].button4}</button>
+
+            {/* change language button */}
+            <button id='lbut' className='but' onClick={() => {
+              this.setState({
+                language: (this.state.language === 'en') ? 'fa' : 'en',
+              })
+            }}>{this.content[this.state.language].button5}</button>
+          </div>
+          
         </header>
         
       </div>
