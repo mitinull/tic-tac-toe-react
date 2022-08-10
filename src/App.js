@@ -8,6 +8,15 @@ const CELL_NUMS=[7,8,9,4,5,6,1,2,3];
 
 class App extends Component {
 
+  constructor() {
+    super();
+    this.myref = React.createRef();
+  }
+
+  componentDidMount() {
+    this.myref.current.focus();
+  }
+
   // create state for the board
   state = {
     board: ['', '', '','','','','','',''],
@@ -141,7 +150,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" tabIndex="1" ref={this.myref}
+       onKeyDown={(key) => key.key==='0'?this.reset():this.add(CELL_NUMS[Number(key.key)-1]-1)}>
         
         <header className="App-header">
           {/* LOGO & TITLE */}
