@@ -6,8 +6,8 @@
 }
 :root.theme2 {
   --bg-color: #E683A9FF;
-  --item-color: #F6EA7BFF;
-  --select-color: #FFBA52FF;
+  --item-color: #FFBA52FF;
+  --select-color: #F6EA7BFF;
 }
 :root.theme3 {
   --bg-color: #28334AFF;
@@ -137,6 +137,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.buttons {
+  width: 55vmin;
 }
 
 .but {

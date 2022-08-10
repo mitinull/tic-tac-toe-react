@@ -142,8 +142,9 @@ class App extends Component {
             <span id="title">Tic-Tac-Toe</span>
           </div>
 
-          {/* single or multiplayer buttons */}
+          {/* buttons */}
           <div className='buttons'>
+            {/* 1 player button */}
             <button id='ipbut' className='but'
             style={{backgroundColor: !this.state.multyplayer? 'var(--select-color)' : '' }} onClick={() => {
               if (this.state.multyplayer){this.reset();}
@@ -151,8 +152,9 @@ class App extends Component {
                 multyplayer: false
               }
             )}}>👤 1Player
-            {!this.state.multyplayer && ''}
             </button>
+
+            {/* 2 player button */}
             <button id='iipbut' className='but'
             style={{backgroundColor: this.state.multyplayer? 'var(--select-color)' : '' }} onClick={() => {
               if (!this.state.multyplayer){this.reset();}
@@ -161,12 +163,23 @@ class App extends Component {
               })
             }
             }>👥 2Player  </button>
+
+            {/* reset button */}
             <button id='rbut' className='but' onClick={() => {
               this.reset();}
             }>Reset</button>
+
+            {/* change theme button */}
             <button id='tbut' className='but' onClick={() => {
               setTheme(themes[(++themeIndex)%3]);}
             }>theme</button>
+
+            {/* change language button */}
+            <button id='lbut' className='but' onClick={() => {
+              this.setState({
+                language: (this.state.language === 'en') ? 'fa' : 'en',
+              })
+            }}> Language </button>
           </div>
 
           {/* BOARD */}
