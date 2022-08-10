@@ -113,9 +113,7 @@
   bottom: 1.3vmin;
   left: 2vmin;
 }
-.cell:hover {
-  background-color: var(--select-color);
-}
+
 
 .cell-content {
   position: absolute;
@@ -157,9 +155,15 @@
   border-radius: 1vmin;
 }
 
-.but:hover {
-  background-color: var(--select-color);
+@media (hover: hover) and (pointer: fine) {
+  .but:hover {
+    background-color: var(--select-color);
+  }
+  .cell:hover {
+    background-color: var(--select-color);
+  }
 }
+
 
 /* #ipbut::first-letter {
   font-size: 1.8vmin;
