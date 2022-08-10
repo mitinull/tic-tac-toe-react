@@ -13,7 +13,25 @@ class App extends Component {
     board: ['', '', '','','','','','',''],
     player: 'X',
     winner: '',
-    gameOver: false
+    gameOver: false,
+    language: 'en',
+  }
+
+  content = {
+    en: {
+      button1: '1Player',
+      button2: '2Player',
+      button3: 'Restart',
+      button4: 'Theme',
+      button5: 'فارسی',
+    },
+    fa: {
+      button1: 'یک نفره',
+      button2: 'دو نفره',
+      button3: 'بازنشانی',
+      button4: 'تم',
+      button5: 'Enghlish',
+    }
   }
 
   // add a player to the board
@@ -143,7 +161,7 @@ class App extends Component {
           </div>
 
           {/* buttons */}
-          <div className='buttons'>
+          <div className='buttons' dir={(this.state.language==='en')?'ltr':'rtl'}>
             {/* 1 player button */}
             <button id='ipbut' className='but'
             style={{backgroundColor: !this.state.multyplayer? 'var(--select-color)' : '' }} onClick={() => {
@@ -151,8 +169,7 @@ class App extends Component {
               this.setState({
                 multyplayer: false
               }
-            )}}>👤 1Player
-            </button>
+            )}}>{this.content[this.state.language].button1}</button>
 
             {/* 2 player button */}
             <button id='iipbut' className='but'
@@ -162,24 +179,24 @@ class App extends Component {
                 multyplayer: true,
               })
             }
-            }>👥 2Player  </button>
+            }>{this.content[this.state.language].button2}</button>
 
             {/* reset button */}
             <button id='rbut' className='but' onClick={() => {
               this.reset();}
-            }>Reset</button>
+            }>{this.content[this.state.language].button3}</button>
 
             {/* change theme button */}
             <button id='tbut' className='but' onClick={() => {
               setTheme(themes[(++themeIndex)%3]);}
-            }>theme</button>
+            }>{this.content[this.state.language].button4}</button>
 
             {/* change language button */}
             <button id='lbut' className='but' onClick={() => {
               this.setState({
                 language: (this.state.language === 'en') ? 'fa' : 'en',
               })
-            }}> Language </button>
+            }}>{this.content[this.state.language].button5}</button>
           </div>
 
           {/* BOARD */}

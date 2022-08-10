@@ -158,9 +158,9 @@
   background-color: var(--select-color);
 }
 
-#ipbut::first-letter {
+/* #ipbut::first-letter {
   font-size: 1.8vmin;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
