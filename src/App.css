@@ -39,7 +39,7 @@
 #title {
   margin-left: 1.7vmin;
   margin-top: -.5vmin;
-  font-size: min(6vh,7vmin);
+  font-size: 6vmin;
   font-weight: bolder;
   color: var(--item-color);
   font-family: sans-serif;
@@ -162,10 +162,10 @@
 }
 
 .icon {
-  height: min(5vh,6vmin);
-  width: min(5vh,6vmin);
+  height: min(5vh,8vmin);
+  width: min(5vh,8vmin);
   color: var(--item-color);
-  margin: 2vmin 1vmin 0vmin 1vmin;
+  margin: 2vmin min(1.2vh,2vmin) 0vmin min(1.2vh,2vmin);
 }
 
 @media (hover: hover) and (pointer: fine) {
