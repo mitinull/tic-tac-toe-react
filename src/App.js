@@ -7,7 +7,6 @@ import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
 
 const setTheme = theme => document.documentElement.className = theme;
 const themes = ['theme1', 'theme2', 'theme3'];
-let themeIndex = 0;
 const CELL_NUMS=[7,8,9,4,5,6,1,2,3];
 let setting_opened = false;
 
@@ -30,6 +29,7 @@ class App extends Component {
     gameOver: false,
     language: 'en',
     setting_open: true,
+    themeIndex: 0,
   }
 
   content = {
@@ -231,16 +231,15 @@ class App extends Component {
           {/* SETTING */}
           {this.state.setting_open && <div id="setting">
             <div className='theme setting-content' >
-              <span className='theme-con'>Theme </span>
               <div className='theme-con'id="theme1" 
-              onClick={() => {setTheme(themes[0]);}}>
-                <div></div></div>
+              onClick={() => {setTheme(themes[0]);this.setState({themeIndex:0});}}>
+                {this.state.themeIndex===0 && '✔'}</div>
               <div className='theme-con'id="theme2"
-              onClick={() => {setTheme(themes[1]);}}>
-                <div></div></div>
+              onClick={() => {setTheme(themes[1]);this.setState({themeIndex:1});}}>
+                {this.state.themeIndex===1 && '✔'}</div>
               <div className='theme-con'id="theme3"
-              onClick={() => {setTheme(themes[2]);}}>
-              <div></div></div>
+              onClick={() => {setTheme(themes[2]);this.setState({themeIndex:2});}}>
+              {this.state.themeIndex===2 && '✔'}</div>
             </div>
           </div>}
 
@@ -248,13 +247,8 @@ class App extends Component {
           <div className='buttons bottombuttons'
            dir={(this.state.language==='en')?'ltr':'rtl'}
            hidden>
-            
-            {/* change theme button */}
-            <button id='tbut' className='but' onClick={() => {
-              setTheme(themes[(++themeIndex)%3]);}
-            }>{this.content[this.state.language].button4}</button>
 
-            {/* change language button */}
+          {/* change language button */}
             <button id='lbut' className='but' onClick={() => {
               this.setState({
                 language: (this.state.language === 'en') ? 'fa' : 'en',
