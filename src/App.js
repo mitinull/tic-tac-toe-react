@@ -194,13 +194,13 @@ class App extends Component {
               if (!this.state.multyplayer){this.reset();}
               this.setState({multyplayer: true,})
             }}/>
-            
-            {/* reset icon */}
-            <MdRestartAlt id="resico" className='icon'
-            onClick={() => {this.reset();}} />
-
             {/* setting icon */}
             <MdSettings id='setico' className='icon' />
+            
+            {/* reset icon */}
+            {/* <MdRestartAlt id="resico" className='icon'
+            onClick={() => {this.reset();}} /> */}
+
             
           </div>
 
