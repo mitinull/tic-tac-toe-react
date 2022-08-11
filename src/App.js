@@ -1,5 +1,10 @@
 import './App.css';
 import React, { Component } from 'react';
+import { AiOutlineSetting } from 'react-icons/ai';
+import { MdRestartAlt, MdSettings } from 'react-icons/md';
+import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
+
+
 
 const setTheme = theme => document.documentElement.className = theme;
 const themes = ['theme1', 'theme2', 'theme3'];
@@ -173,42 +178,31 @@ class App extends Component {
 
           {/* buttons */}
           <div className='buttons' dir={(this.state.language==='en')?'ltr':'rtl'}>
-            {/* 1 player button */}
-            <button id='ipbut' className='but'
-            style={{backgroundColor: !this.state.multyplayer? 'var(--select-color)' : '' }} onClick={() => {
-              if (this.state.multyplayer){this.reset();}
-              this.setState({
-                multyplayer: false
-              }
-            )}}>{this.content[this.state.language].button1}</button>
-
-            {/* 2 player button */}
-            <button id='iipbut' className='but'
-            style={{backgroundColor: this.state.multyplayer? 'var(--select-color)' : '' }} onClick={() => {
+            
+            {/* 1player icon */}
+            <BsPersonFill id="mpico" className='icon'
+            style={{ color: !this.state.multyplayer?
+              'var(--select-color)' : '' }} onClick={() => {
               if (!this.state.multyplayer){this.reset();}
-              this.setState({
-                multyplayer: true,
-              })
-            }
-            }>{this.content[this.state.language].button2}</button>
+              this.setState({multyplayer: false,})
+            }}/>
+            
+            
+            {/* 2player icon */}
+            <BsPeopleFill id="mpico" className='icon'
+            style={{ color: this.state.multyplayer?
+              'var(--select-color)' : '' }} onClick={() => {
+              if (!this.state.multyplayer){this.reset();}
+              this.setState({multyplayer: true,})
+            }}/>
+            
+            {/* reset icon */}
+            <MdRestartAlt id="resico" className='icon'
+            onClick={() => {this.reset();}} />
 
-            {/* reset button */}
-            <button id='rbut' className='but' onClick={() => {
-              this.reset();}
-            }>{this.content[this.state.language].button3}</button>
-
-            {/* change theme button */}
-            {/* <button id='tbut' className='but' onClick={() => {
-              setTheme(themes[(++themeIndex)%3]);}
-            }>{this.content[this.state.language].button4}</button> */}
-
-            {/* change language button */}
-            {/* <button id='lbut' className='but' onClick={() => {
-              this.setState({
-                language: (this.state.language === 'en') ? 'fa' : 'en',
-              })
-            }}>{this.content[this.state.language].button5}
-            </button> */}
+            {/* setting icon */}
+            <MdSettings id='setico' className='icon' />
+            
           </div>
 
           {/* BOARD */}
