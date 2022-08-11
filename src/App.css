@@ -107,8 +107,8 @@
   background-color: var(--item-color);
   color: var(--bg-color);
   font-size: 2vmin;
-  width: 25vmin;
-  height: 25vmin;
+  width: 23vmin;
+  height: 23vmin;
 }
 .cell span {
   position: absolute;
