@@ -1,6 +1,5 @@
 import './App.css';
 import React, { Component } from 'react';
-import { AiOutlineSetting } from 'react-icons/ai';
 import { MdRestartAlt, MdSettings } from 'react-icons/md';
 import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
 
