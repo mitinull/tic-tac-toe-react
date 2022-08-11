@@ -178,7 +178,7 @@
   height: min(5vh,8vmin);
   width: min(5vh,8vmin);
   color: var(--item-color);
-  margin: 2vmin min(1.2vh,2vmin) 0vmin min(1.2vh,2vmin);
+  margin: min(2vh,3vmin) min(1.2vh,2vmin) 0vmin min(1.2vh,2vmin);
 }
 
 @media (hover: hover) and (pointer: fine) {
