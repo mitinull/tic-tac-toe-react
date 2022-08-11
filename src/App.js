@@ -185,22 +185,26 @@ class App extends Component {
             
             {/* 1player icon */}
             <BsPersonFill id="mpico" className='icon'
-            style={{ color: !this.state.multyplayer?
+            style={{ color: !this.state.multyplayer&&
+              !this.state.setting_open?
               'var(--select-color)' : '' }} onClick={() => {
               if (this.state.multyplayer){this.reset();}
-              this.setState({multyplayer: false,})
+              this.setState({multyplayer: false,setting_open: false})
             }}/>
             
             
             {/* 2player icon */}
             <BsPeopleFill id="mpico" className='icon'
-            style={{ color: this.state.multyplayer?
+            style={{ color: this.state.multyplayer&&
+              !this.state.setting_open?
               'var(--select-color)' : '' }} onClick={() => {
               if (!this.state.multyplayer){this.reset();}
-              this.setState({multyplayer: true,})
+              this.setState({multyplayer: true,setting_open: false})
             }}/>
             {/* setting icon */}
             <MdSettings id='setico' className='icon'
+            style={{ color: this.state.setting_open?
+              'var(--select-color)' : '' }}
             onClick={() => {this.setState({setting_open:!this.state.setting_open});}} />
             
             {/* reset icon */}
