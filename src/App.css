@@ -99,7 +99,7 @@
   display: grid;
   gap: 1.7vmin;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 1.5vmin;
+  margin-top: min(1.5vh, 3vmin);
 }
 
 .cell {
