@@ -29,7 +29,7 @@ class App extends Component {
     winner: '',
     gameOver: false,
     language: 'en',
-    setting_open: false,
+    setting_open: true,
   }
 
   content = {
@@ -230,7 +230,18 @@ class App extends Component {
 
           {/* SETTING */}
           {this.state.setting_open && <div id="setting">
-            
+            <div className='theme setting-content' >
+              <span className='theme-con'>Theme </span>
+              <div className='theme-con'id="theme1" 
+              onClick={() => {setTheme(themes[0]);}}>
+                <div></div></div>
+              <div className='theme-con'id="theme2"
+              onClick={() => {setTheme(themes[1]);}}>
+                <div></div></div>
+              <div className='theme-con'id="theme3"
+              onClick={() => {setTheme(themes[2]);}}>
+              <div></div></div>
+            </div>
           </div>}
 
           {/* bottom buttons */}

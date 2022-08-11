@@ -121,6 +121,44 @@
   width: calc(min(1.7vh, 2.143vmin)*2 + min(23vh, 29vmin)*3);
   margin-top: min(1.5vh, 3vmin);
   border-radius: 3%;
+  color: var(--bg-color);
+  font-size: 5vmin;
+
+
+}
+
+.theme{
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  width: 60%;
+}
+
+.theme-con {
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.theme div {
+  border: solid 2px var(--bg-color);
+}
+.theme-con div {
+  width: 5vmin;
+  height: 5vmin;
+  border: none;
+}
+
+#theme1 {
+  background-color: #b0b8b4;
+}
+#theme2 {
+  background-color: #F65058FF;
+}
+#theme3 {
+  background-color: rgb(27, 113, 159);
+}
+
+.setting-content {
+  margin: 7vmin 0vmin 0vmin 4vmin;
 }
 
 .cell {
@@ -197,6 +235,10 @@
   .icon:hover {
     color: var(--select-color);
     transform: scale(1.2);
+    transition: .4s;
+  }
+  .theme div:hover {
+    transform: scale(1.1);
     transition: .4s;
   }
   .cell:hover {
