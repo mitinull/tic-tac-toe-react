@@ -39,7 +39,7 @@
 #title {
   margin-left: 1.7vmin;
   margin-top: -.5vmin;
-  font-size: 6vmin;
+  font-size: min(6vh,7vmin);
   font-weight: bolder;
   color: var(--item-color);
   font-family: sans-serif;
@@ -107,8 +107,8 @@
   background-color: var(--item-color);
   color: var(--bg-color);
   font-size: 2vmin;
-  width: min(23vh, 27vmin);
-  height: min(23vh, 27vmin);
+  width: min(23vh, 29vmin);
+  height: min(23vh, 29vmin);
 }
 .cell span {
   position: absolute;
@@ -162,8 +162,8 @@
 }
 
 .icon {
-  height: 5vmin;
-  width: 5vmin;
+  height: min(5vh,6vmin);
+  width: min(5vh,6vmin);
   color: var(--item-color);
   margin: 2vmin 1vmin 0vmin 1vmin;
 }
