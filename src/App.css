@@ -219,6 +219,7 @@
 
   #board {
     animation: setting-scale .5s;
+    animation: none;
   }
 }
 
@@ -236,7 +237,7 @@
     opacity: 0;
     transform: scale(.5);
   }
-  75% {
+  70% {
     transform: scale(1.02);
   }
   100% {

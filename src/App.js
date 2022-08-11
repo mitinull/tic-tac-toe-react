@@ -9,6 +9,7 @@ const setTheme = theme => document.documentElement.className = theme;
 const themes = ['theme1', 'theme2', 'theme3'];
 let themeIndex = 0;
 const CELL_NUMS=[7,8,9,4,5,6,1,2,3];
+let setting_opened = false;
 
 class App extends Component {
 
@@ -205,7 +206,7 @@ class App extends Component {
             <MdSettings id='setico' className='icon'
             style={{ color: this.state.setting_open?
               'var(--select-color)' : '' }}
-            onClick={() => {this.setState({setting_open:!this.state.setting_open});}} />
+            onClick={() => {this.setState({setting_open:!this.state.setting_open});setting_opened=true;}} />
             
             {/* reset icon */}
             <MdRestartAlt id="resico" className='icon'
@@ -215,7 +216,8 @@ class App extends Component {
           </div>
 
           {/* BOARD */}
-          {!this.state.setting_open && <div id="board">
+          {!this.state.setting_open && <div id="board"
+          style={{animation: setting_opened && 'setting-scale .5s'}}>
             {this.state.board.map((square, index) => 
               <div className="cell" key={index} onClick={()=>this.add(index)}>
                 <span>{CELL_NUMS[index]}</span>
