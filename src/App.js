@@ -182,7 +182,7 @@ class App extends Component {
             <BsPersonFill id="mpico" className='icon'
             style={{ color: !this.state.multyplayer?
               'var(--select-color)' : '' }} onClick={() => {
-              if (!this.state.multyplayer){this.reset();}
+              if (this.state.multyplayer){this.reset();}
               this.setState({multyplayer: false,})
             }}/>
             
