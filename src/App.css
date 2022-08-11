@@ -110,7 +110,7 @@
 
 #board {
   display: grid;
-  gap: 1.7vmin;
+  gap: min(1.7vh, 2.143vmin);
   grid-template-columns: repeat(3, 1fr);
   margin-top: min(1.5vh, 3vmin);
 }
