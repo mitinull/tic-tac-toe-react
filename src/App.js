@@ -161,14 +161,18 @@ class App extends Component {
           {/* LOGO & TITLE */}
           <div className="title-logo">
             {/* LOGO */}
-            <div className="App-logo">
-              <div className="App-logo-inner1">
-                <div className="App-logo-inner1-inner1"></div>
-                <div className="App-logo-inner1-inner2"></div>
-              </div>
-              <div className="App-logo-inner2">
-                <div className="App-logo-inner2-inner1"></div>
-                <div className="App-logo-inner2-inner2"></div>
+            <div className="App-logo-container">
+              <div className="App-logo App-logo-border">
+                <div className="App-logo">
+                  <div className="App-logo-inner1">
+                    <div className="App-logo-inner1-inner1"></div>
+                    <div className="App-logo-inner1-inner2"></div>
+                  </div>
+                  <div className="App-logo-inner2">
+                    <div className="App-logo-inner2-inner1"></div>
+                    <div className="App-logo-inner2-inner2"></div>
+                  </div>
+                </div>
               </div>
             </div>
             {/* TITLE */}

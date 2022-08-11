@@ -25,74 +25,87 @@
   margin-top: 4vmin;
 }
 
-.App-logo {
-  height: 4vmin;
-  width: 4vmin;
-  pointer-events: none;
-  background-color: transparent;
-  border-radius: 50%;
-  border: .75vmin solid var(--item-color);
-  justify-content: center;
-  align-items: center;
+.App-logo-container {
+  height: min(4vh, 6vmin);
+  width: min(4vh, 6vmin);
 }
 
-#title {
-  margin-left: 1.7vmin;
-  margin-top: -.5vmin;
-  font-size: 6vmin;
-  font-weight: bolder;
-  color: var(--item-color);
-  font-family: sans-serif;
+.App-logo {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+
+.App-logo-border {
+  background-color: var(--item-color);
+  height: 100%;
+  width: 100%;
+  padding: 18.75%;
 }
 
 .App-logo-inner1 {
   position: absolute;
-  top: 1.625vmin;
-  left: -.5vmin;
-  height: .75vmin;
-  width: 5vmin;
+  top: 40.625%;
+  left: -12.5%;
+  height: 18.75%;
+  width: 125%;
   background-color: var(--item-color);
 }
 .App-logo-inner2 {
   position: absolute;
-  top: -.5vmin;
-  left: 1.625vmin;
-  height: 5vmin;
-  width: .75vmin;
+  top: -12.5%;
+  left: 40.625%;
+  height: 125%;
+  width: 18.75%;
   background-color: var(--item-color);
 }
 
 .App-logo-inner1-inner1 {
   position: absolute;
-  top: -.75vmin;
-  left: -.5vmin;
-  height: .75vmin;
-  width: 4vmin;
+  top: -100%;
+  left: -12.5%;
+  height: 100%;
+  width: 90%;
   background-color: var(--bg-color);
 }
 .App-logo-inner1-inner2 {
   position: absolute;
-  top: .75vmin;
-  left: 1.5vmin;
-  height: .75vmin;
-  width: 4vmin;
+  top: 100%;
+  left: 30%;
+  height: 100%;
+  width: 80%;
   background-color: var(--bg-color);
 }
 .App-logo-inner2-inner1 {
   position: absolute;
-  top: -1vmin;
-  left: .75vmin;
-  height: 2vmin;
-  width: .75vmin;
+  top: -7%;
+  left: 100%;
+  height: 40%;
+  width: 100%;
   background-color: var(--bg-color);
 }
 .App-logo-inner2-inner2 {
   position: absolute;
-  top: 3.5vmin;
-  left: -.75vmin;
-  height: 2vmin;
-  width: .75vmin;
+  top: 70%;
+  left: -100%;
+  height: 40%;
+  width: 100%;
   background-color: var(--bg-color);
+}
+
+#title {
+  margin-left: min(3vh, 4vmin);
+  margin-top: -.5vmin;
+  font-size: min(6vh, 9vmin);
+  font-weight: bolder;
+  color: var(--item-color);
+  font-family: sans-serif;
 }
 
 #board {
@@ -189,7 +202,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 17s linear;
   }
 }
 
