@@ -28,6 +28,7 @@ class App extends Component {
     winner: '',
     gameOver: false,
     language: 'en',
+    setting_open: false,
   }
 
   content = {
@@ -155,7 +156,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" tabIndex="1" ref={this.myref}
-       onKeyDown={(key) => key.key==='0'?this.reset():this.add(CELL_NUMS[Number(key.key)-1]-1)}>
+       onKeyDown={(key) => !this.state.setting_open && (key.key==='0'?this.reset():this.add(CELL_NUMS[Number(key.key)-1]-1))}>
         
         <header className="App-header">
           {/* LOGO & TITLE */}
@@ -199,7 +200,8 @@ class App extends Component {
               this.setState({multyplayer: true,})
             }}/>
             {/* setting icon */}
-            <MdSettings id='setico' className='icon' />
+            <MdSettings id='setico' className='icon'
+            onClick={() => {this.setState({setting_open:!this.state.setting_open});}} />
             
             {/* reset icon */}
             <MdRestartAlt id="resico" className='icon'
@@ -209,7 +211,7 @@ class App extends Component {
           </div>
 
           {/* BOARD */}
-          <div id="board">
+          {!this.state.setting_open && <div id="board">
             {this.state.board.map((square, index) => 
               <div className="cell" key={index} onClick={()=>this.add(index)}>
                 <span>{CELL_NUMS[index]}</span>
@@ -218,7 +220,12 @@ class App extends Component {
                 </div>
               </div>
             )}
-          </div>
+          </div>}
+
+          {/* SETTING */}
+          {this.state.setting_open && <div id="setting">
+            
+          </div>}
 
           {/* bottom buttons */}
           <div className='buttons bottombuttons'

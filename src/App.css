@@ -115,11 +115,19 @@
   margin-top: min(1.5vh, 3vmin);
 }
 
+#setting {
+  background-color: var(--item-color);
+  height: calc(min(1.7vh, 2.143vmin)*2 + min(23vh, 29vmin)*3);
+  width: calc(min(1.7vh, 2.143vmin)*2 + min(23vh, 29vmin)*3);
+  margin-top: min(1.5vh, 3vmin);
+  border-radius: 5%;
+}
+
 .cell {
   position: relative;
   background-color: var(--item-color);
   color: var(--bg-color);
-  font-size: 2vmin;
+  font-size: calc(1.6vmin + 5px);
   width: min(23vh, 29vmin);
   height: min(23vh, 29vmin);
 }
@@ -204,6 +212,9 @@
   .App-logo {
     animation: App-logo-spin infinite 17s linear;
   }
+  #setting {
+    animation: setting-scale .5s;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -212,6 +223,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes setting-scale {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
