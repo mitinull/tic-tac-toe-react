@@ -198,8 +198,8 @@ class App extends Component {
             <MdSettings id='setico' className='icon' />
             
             {/* reset icon */}
-            {/* <MdRestartAlt id="resico" className='icon'
-            onClick={() => {this.reset();}} /> */}
+            <MdRestartAlt id="resico" className='icon'
+            onClick={() => {this.reset();}} display='none'/>
 
             
           </div>
