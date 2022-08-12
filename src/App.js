@@ -1,8 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
-import { MdRestartAlt, MdSettings, MdClose } from 'react-icons/md';
+import { MdRestartAlt, MdSettings } from 'react-icons/md';
 import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
-import {AiOutlineClose} from 'react-icons/ai';
 import {RiBrushFill, RiCloseLine} from 'react-icons/ri';
 import {GiSpeaker,GiSpeakerOff} from 'react-icons/gi';
 
