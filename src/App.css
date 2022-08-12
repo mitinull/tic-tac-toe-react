@@ -159,8 +159,34 @@
   background-color: rgb(27, 113, 159);
 }
 
+.game-level {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+  margin-top: 8%;
+
+}
+
+.game-level button {
+  flex: 1;
+  padding: 2%;
+  margin: 2% 3%;
+  background-color: var(--bg-color);
+  color: var(--item-color);
+  border: none;
+  border-radius: 1vmin;
+  font-size: 3vmin;
+}
+
+.language {
+  /* flex-direction: row; */
+  margin-top: 4%;
+  /* margin-left: 5%;
+  margin-right: 5%; */
+}
+
 .setting-content {
-  margin: 14% auto;
+  margin: 14% auto 0% auto;
 }
 
 .cell {

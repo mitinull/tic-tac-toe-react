@@ -30,7 +30,7 @@ class App extends Component {
     winner: '',
     gameOver: false,
     language: 'en',
-    setting_open: false,
+    setting_open: true,
     themeIndex: 0,
     sound_on: true,
   }
@@ -252,6 +252,15 @@ class App extends Component {
               <RiCloseLine className='theme-con'
               onClick={() => {this.setState({setting_open:false});
               setting_opened = true; }}/>
+            </div>
+            <div className='game-level'>
+              <button>Easy</button>
+              <button>Medium</button>
+              <button>Hard</button>
+            </div>
+            <div className='game-level language'>
+              <button>Enghlish</button>
+              <button>فارسی</button>
             </div>
           </div>}
 
