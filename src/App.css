@@ -168,14 +168,13 @@
 }
 
 .game-level button {
-  flex: 1;
   padding: 2%;
   margin: 2% 3%;
   background-color: var(--bg-color);
   color: var(--item-color);
   border: none;
   border-radius: 1vmin;
-  font-size: 3vmin;
+  font-size: 60%;
 }
 
 .language {
