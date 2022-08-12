@@ -1,9 +1,10 @@
 import './App.css';
 import React, { Component } from 'react';
-import { MdRestartAlt, MdSettings } from 'react-icons/md';
+import { MdRestartAlt, MdSettings, MdClose } from 'react-icons/md';
 import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
-import {AiFillCloseCircle} from 'react-icons/ai';
-import {RiBrushFill} from 'react-icons/ri';
+import {AiOutlineClose} from 'react-icons/ai';
+import {RiBrushFill, RiCloseLine} from 'react-icons/ri';
+import {GiSpeaker,GiSpeakerOff} from 'react-icons/gi';
 
 
 
@@ -32,6 +33,7 @@ class App extends Component {
     language: 'en',
     setting_open: true,
     themeIndex: 0,
+    sound_on: true,
   }
 
   content = {
@@ -242,7 +244,13 @@ class App extends Component {
               <div className='theme-con'id="theme3"
               onClick={() => {setTheme(themes[2]);this.setState({themeIndex:2});}}>
               {this.state.themeIndex===2 && <RiBrushFill id='brush'/>}</div>
-              <AiFillCloseCircle className='theme-con'
+
+              {this.state.sound_on? <GiSpeaker className='theme-con'
+              onClick={() => {this.setState({sound_on:false})}}/>:
+              <GiSpeakerOff className='theme-con'
+              onClick={() => {this.setState({sound_on:true})}}/>}
+
+              <RiCloseLine className='theme-con'
               onClick={() => {this.setState({setting_open:false});
               setting_opened = true; }}/>
             </div>

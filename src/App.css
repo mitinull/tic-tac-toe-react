@@ -12,7 +12,7 @@
 :root.theme3 {
   --bg-color: #D3D0CBFF;
   --item-color: rgb(27, 113, 159);
-  --select-color: rgb(56, 131, 36);
+  --select-color: rgb(59, 160, 31);
 }
 
 .App {
@@ -160,7 +160,7 @@
 }
 
 .setting-content {
-  margin: 10% auto;
+  margin: 14% auto;
 }
 
 .cell {
@@ -241,7 +241,10 @@
   }
   .theme-con:hover {
     transform: scale(1.1);
+    border-color: var(--select-color);
+    color: var(--select-color);
     transition: .4s;
+
   }
   .cell:hover {
     background-color: var(--select-color);
