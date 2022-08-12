@@ -33,6 +33,7 @@ class App extends Component {
     setting_open: true,
     themeIndex: 0,
     sound_on: true,
+    game_level: 'easy',
   }
 
   content = {
@@ -254,9 +255,21 @@ class App extends Component {
               setting_opened = true; }}/>
             </div>
             <div className='game-level'>
-              <button>Easy</button>
-              <button>Medium</button>
-              <button>Hard</button>
+              <button style={{ color: this.state.game_level==='easy'
+            && 'var(--bg-color)', background: this.state.game_level==='easy'
+            && 'var(--select-color' }}
+            onClick={()=>{this.setState({game_level:'easy'})}}>
+              Easy </button>
+              <button style={{ color: this.state.game_level==='medium'
+            && 'var(--bg-color)', background: this.state.game_level==='medium'
+            && 'var(--select-color' }}
+            onClick={()=>{this.setState({game_level:'medium'})}}>
+              Medium</button>
+              <button style={{ color: this.state.game_level==='hard'
+            && 'var(--bg-color)', background: this.state.game_level==='hard'
+            && 'var(--select-color' }}
+            onClick={()=>{this.setState({game_level:'hard'})}}>
+                Hard</button>
             </div>
             <div className='game-level language'>
               <button>Enghlish</button>

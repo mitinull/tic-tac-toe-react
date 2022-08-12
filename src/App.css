@@ -162,12 +162,14 @@
 .game-level {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding: 0 10%;
   margin-top: 8%;
-
+  height: 35%;
 }
 
 .game-level button {
+  flex: 1;
   padding: 2%;
   margin: 2% 3%;
   background-color: var(--bg-color);
@@ -175,11 +177,13 @@
   border: none;
   border-radius: 1vmin;
   font-size: 60%;
+  
 }
 
 .language {
   /* flex-direction: row; */
   margin-top: 4%;
+  height: calc(70%/3);
   /* margin-left: 5%;
   margin-right: 5%; */
 }
@@ -269,7 +273,12 @@
     border-color: var(--select-color);
     color: var(--select-color);
     transition: .4s;
-
+  }
+  .game-level button:hover {
+    transform: scale(1.03);
+    background-color: var(--select-color);
+    color: var(--bg-color);
+    transition: .4s;
   }
   .cell:hover {
     background-color: var(--select-color);
@@ -320,5 +329,34 @@
 @media screen and (max-width: 600px) {
   .cell span {
     display: none;
+  }
+  .language {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  .language button {
+    width: 100%;
+    /* height: 5%; */
+    /* margin: 2%; */
+  }
+  .language button:first-child {
+    margin-right: 2.2%;
+  }
+  .language button:nth-child(2) {
+    margin-left: 2.2%;
+  }
+  .game-level {
+    height: 45%;
+  }
+  .game-level button {
+    align-items: stretch;
+  }
+  .language {
+    height: calc(40%/3);
+    margin-top: 2%;
+  }
+  .game-level button {
+    font-size: 80%;
   }
 }
