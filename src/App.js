@@ -30,7 +30,7 @@ class App extends Component {
     winner: '',
     gameOver: false,
     language: 'en',
-    setting_open: true,
+    setting_open: false,
     themeIndex: 0,
     sound_on: true,
   }
