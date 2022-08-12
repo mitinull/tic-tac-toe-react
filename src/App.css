@@ -123,24 +123,30 @@
   border-radius: 3%;
   color: var(--bg-color);
   font-size: 5vmin;
-
-
 }
 
 .theme{
   display: flex;
   justify-content: stretch;
   align-items: center;
-  width: 40%;
+  width: 80%;
   height: 8%;
 }
 
 .theme-con {
-  margin: 0 auto 0 0;
+  margin: 0 auto;
   border-radius: 50%;
-  width: 20%;
+  width: 10%;
   height: 100%;
   border: solid 2px var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#brush {
+  width: 70%;
+  height: 70%;
 }
 
 #theme1 {
@@ -154,7 +160,7 @@
 }
 
 .setting-content {
-  margin: 5% 0% 0% 5%;
+  margin: 10% auto;
 }
 
 .cell {
@@ -233,7 +239,7 @@
     transform: scale(1.2);
     transition: .4s;
   }
-  .theme div:hover {
+  .theme-con:hover {
     transform: scale(1.1);
     transition: .4s;
   }

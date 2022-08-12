@@ -2,6 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import { MdRestartAlt, MdSettings } from 'react-icons/md';
 import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
+import {AiFillCloseCircle} from 'react-icons/ai';
+import {RiBrushFill} from 'react-icons/ri';
 
 
 
@@ -233,13 +235,16 @@ class App extends Component {
             <div className='theme setting-content' >
               <div className='theme-con'id="theme1" 
               onClick={() => {setTheme(themes[0]);this.setState({themeIndex:0});}}>
-                {this.state.themeIndex===0 && '✔'}</div>
+                {this.state.themeIndex===0 && <RiBrushFill id='brush'/>}</div>
               <div className='theme-con'id="theme2"
               onClick={() => {setTheme(themes[1]);this.setState({themeIndex:1});}}>
-                {this.state.themeIndex===1 && '✔'}</div>
+                {this.state.themeIndex===1 && <RiBrushFill id='brush'/>}</div>
               <div className='theme-con'id="theme3"
               onClick={() => {setTheme(themes[2]);this.setState({themeIndex:2});}}>
-              {this.state.themeIndex===2 && '✔'}</div>
+              {this.state.themeIndex===2 && <RiBrushFill id='brush'/>}</div>
+              <AiFillCloseCircle className='theme-con'
+              onClick={() => {this.setState({setting_open:false});
+              setting_opened = true; }}/>
             </div>
           </div>}
 
