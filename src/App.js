@@ -29,7 +29,7 @@ class App extends Component {
     board: ['', '', '','','','','','',''],
     player: 'X',
     winner: '',
-    gameOver: true,
+    gameOver: false,
     language: 'en',
     setting_open: false,
     themeIndex: 0,
@@ -231,10 +231,21 @@ class App extends Component {
           </div>}
 
           {/* WIN PAGE */}
-          {!this.state.setting_open && this.state.gameOver && 
+          { setting_opened = true &&
+          !this.state.setting_open && this.state.gameOver && 
           <div id="setting">
             <div className=' winpage-content' id={this.state.language==='en' && 'eng'} >
-              <span>Player <span id='winner'> {this.state.winner} </span> Won!</span>
+              { this.state.language==='en'?
+                this.state.winner === 'tie' || this.state.winner === '' ?
+                <span>Draw!</span> :
+                <span>Player <span id='winner'> {this.state.winner} </span> Won!</span>
+                :
+                this.state.winner === 'tie' || this.state.winner === '' ?
+                <span>!مساوی</span> :
+                <span>!برد <span id='winner'> {this.state.winner} </span> بازیکن</span>
+                
+
+              }
               <RiRestartFill id='reswon' onClick={()=>this.reset()}/>
             </div>
             
