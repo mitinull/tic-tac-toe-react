@@ -144,11 +144,11 @@
   align-items: center;
 }
 
-/* #restart {
-  width: 15%;
-  height: 140%;
-  border:none;
-} */
+#restart {
+  width: 9%;
+  height: 90%;
+  padding: .5%;
+}
 
 #brush {
   width: 70%;

@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { MdRestartAlt, MdSettings } from 'react-icons/md';
 import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
-import {RiBrushFill, RiCloseLine, RiRestartFill}
+import {RiBrushFill, RiCloseLine, RiRestartLine}
 from 'react-icons/ri';
 
 
@@ -243,7 +243,7 @@ class App extends Component {
               onClick={() => {setTheme(themes[2]);this.setState({themeIndex:2});}}>
               {this.state.themeIndex===2 && <RiBrushFill id='brush'/>}</div>
 
-              <RiRestartFill className='theme-con' onClick={() => 
+              <RiRestartLine className='theme-con' onClick={() => 
               {this.reset(); this.setState({setting_open:false})}}
               id='restart'/>
               
