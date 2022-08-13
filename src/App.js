@@ -158,7 +158,9 @@ class App extends Component {
   render() {
     return (
       <div className="App" tabIndex="1" ref={this.myref}
-       onKeyDown={(key) => !this.state.setting_open && (key.key==='0'?this.reset():this.add(CELL_NUMS[Number(key.key)-1]-1))}>
+       onKeyDown={(key) => !this.state.setting_open && (key.key==='0' || 
+       (key.key==='Enter' && this.state.gameOver)?
+       this.reset():this.add(CELL_NUMS[Number(key.key)-1]-1))}>
         
         <header className="App-header">
           {/* LOGO & TITLE */}
@@ -267,8 +269,8 @@ class App extends Component {
               {this.state.themeIndex===2 && <RiBrushFill id='brush'/>}</div>
 
               <RiRestartLine className='theme-con' onClick={() => 
-              {this.reset(); this.setState({setting_open:false})}}
-              id='restart'/>
+              {this.reset(); this.setState({setting_open:false});
+              setting_opened = true; }} id='restart'/>
               
 
               <RiCloseLine className='theme-con'
