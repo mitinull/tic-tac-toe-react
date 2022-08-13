@@ -150,6 +150,28 @@
   padding: .5%;
 }
 
+#reswon {
+  margin-top: 7%;
+  width: 17%;
+  height: 17%;
+}
+
+.winpage-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 150%;
+  font-weight: bolder;
+  /* font-family: tanha; */
+}
+#winner {
+  font-family: sans-serif;
+}
+
+
 #brush {
   width: 70%;
   height: 70%;
@@ -305,6 +327,12 @@
   }
   .cell:hover {
     background-color: var(--select-color);
+    transition: .1s;
+  }
+  #reswon:hover {
+    animation: App-logo-spin infinite 1s linear;
+    color: var(--select-color);
+    transition: .3s;
   }
 }
 
@@ -325,6 +353,7 @@
     animation: setting-scale .5s;
     animation: none;
   }
+  
 }
 
 @keyframes App-logo-spin {
@@ -385,5 +414,8 @@
   }
   .language button {
     font-size: 80%;
+  }
+  .winpage-content {
+    font-size: 190%;
   }
 }

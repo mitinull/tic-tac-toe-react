@@ -2,7 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import { MdRestartAlt, MdSettings } from 'react-icons/md';
 import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
-import {RiBrushFill, RiCloseLine, RiRestartLine}
+import {RiBrushFill, RiCloseLine,
+   RiRestartLine, RiRestartFill}
 from 'react-icons/ri';
 
 
@@ -28,9 +29,9 @@ class App extends Component {
     board: ['', '', '','','','','','',''],
     player: 'X',
     winner: '',
-    gameOver: false,
+    gameOver: true,
     language: 'en',
-    setting_open: true,
+    setting_open: false,
     themeIndex: 0,
     sound_on: true,
     game_level: 'medium',
@@ -216,7 +217,8 @@ class App extends Component {
           </div>
 
           {/* BOARD */}
-          {!this.state.setting_open && <div id="board"
+          {!this.state.setting_open  && !this.state.gameOver
+           && <div id="board"
           style={{animation: setting_opened && 'setting-scale .5s'}}>
             {this.state.board.map((square, index) => 
               <div className="cell" key={index} onClick={()=>this.add(index)}>
@@ -229,6 +231,16 @@ class App extends Component {
           </div>}
 
           {/* WIN PAGE */}
+          {!this.state.setting_open && this.state.gameOver && 
+          <div id="setting">
+            <div className=' winpage-content' id={this.state.language==='en' && 'eng'} >
+              <span>Player <span id='winner'> {this.state.winner} </span> Won!</span>
+              <RiRestartFill id='reswon' onClick={()=>this.reset()}/>
+            </div>
+            
+
+          </div>}
+          {/* End Win Page */}
 
           {/* SETTING */}
           {this.state.setting_open && <div id="setting">
@@ -291,6 +303,7 @@ class App extends Component {
               فارسی</button>
             </div>
           </div>}
+          {/* End Setting */}
 
           {/* bottom buttons */}
           <div className='buttons bottombuttons'
