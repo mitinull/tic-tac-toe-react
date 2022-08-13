@@ -159,6 +159,11 @@
   background-color: rgb(27, 113, 159);
 }
 
+@font-face {
+  font-family: mitra;
+  src: url(fonts/mitra.ttf);
+}
+
 .game-level {
   display: flex;
   flex-direction: column;
@@ -166,6 +171,7 @@
   padding: 0 10%;
   margin-top: 8%;
   height: 35%;
+  
 }
 
 .game-level button {
@@ -177,6 +183,8 @@
   border: none;
   border-radius: 1vmin;
   font-size: 60%;
+  font-family: cursive;
+  font-family: mitra;
   
 }
 
