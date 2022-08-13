@@ -33,23 +33,19 @@ class App extends Component {
     setting_open: true,
     themeIndex: 0,
     sound_on: true,
-    game_level: 'easy',
+    game_level: 'medium',
   }
 
   content = {
     en: {
-      button1: '1Player',
-      button2: '2Player',
-      button3: 'Restart',
-      button4: 'Theme',
-      button5: 'فارسی',
+      button1: 'Easy',
+      button2: 'Medium',
+      button3: 'Hard',
     },
     fa: {
-      button1: 'یک نفره',
-      button2: 'دو نفره',
-      button3: 'بازنشانی',
-      button4: 'تم',
-      button5: 'Enghlish',
+      button1: 'راحت',
+      button2: 'متوسط',
+      button3: 'سخت',
     }
   }
 
@@ -186,7 +182,7 @@ class App extends Component {
           </div>
 
           {/* buttons */}
-          <div className='buttons' dir={(this.state.language==='en')?'ltr':'rtl'}>
+          <div className='buttons'>
             
             {/* 1player icon */}
             <BsPersonFill id="mpico" className='icon'
@@ -259,27 +255,34 @@ class App extends Component {
             && 'var(--bg-color)', background: this.state.game_level==='easy'
             && 'var(--select-color' }}
             onClick={()=>{this.setState({game_level:'easy'})}}>
-              Easy </button>
+              {this.content[this.state.language]['button1']} </button>
               <button style={{ color: this.state.game_level==='medium'
             && 'var(--bg-color)', background: this.state.game_level==='medium'
             && 'var(--select-color' }}
             onClick={()=>{this.setState({game_level:'medium'})}}>
-              Medium</button>
+              {this.content[this.state.language]['button2']}</button>
               <button style={{ color: this.state.game_level==='hard'
             && 'var(--bg-color)', background: this.state.game_level==='hard'
             && 'var(--select-color' }}
             onClick={()=>{this.setState({game_level:'hard'})}}>
-                Hard</button>
+                {this.content[this.state.language]['button3']}</button>
             </div>
             <div className='game-level language'>
-              <button>Enghlish</button>
-              <button>فارسی</button>
+            <button style={{ color: this.state.language==='en'
+            && 'var(--bg-color)', background: this.state.language==='en'
+            && 'var(--select-color' }}
+            onClick={()=>{this.setState({language:'en'})}}>
+              Enghlish</button>
+              <button style={{ color: this.state.language==='fa'
+            && 'var(--bg-color)', background: this.state.language==='fa'
+            && 'var(--select-color' }}
+            onClick={()=>{this.setState({language:'fa'})}}>
+              فارسی</button>
             </div>
           </div>}
 
           {/* bottom buttons */}
           <div className='buttons bottombuttons'
-           dir={(this.state.language==='en')?'ltr':'rtl'}
            hidden>
 
           {/* change language button */}
