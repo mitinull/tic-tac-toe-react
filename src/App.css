@@ -167,6 +167,14 @@
   font-family: tanha;
   src: url(fonts/tanha.woff);
 }
+@font-face {
+  font-family: dyna;
+  src: url(fonts/dynapuff.ttf);
+}
+@font-face {
+  font-family: dosis;
+  src: url(fonts/dosis.ttf);
+}
 
 .game-level {
   display: flex;
@@ -192,7 +200,7 @@
 }
 
 #eng {
-  font-family: cursive;
+  font-family: dosis;
 }
 
 .language {
