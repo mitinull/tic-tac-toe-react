@@ -250,28 +250,37 @@ class App extends Component {
               onClick={() => {this.setState({setting_open:false});
               setting_opened = true; }}/>
             </div>
+
             <div className='game-level'>
+
               <button style={{ color: this.state.game_level==='easy'
             && 'var(--bg-color)', background: this.state.game_level==='easy'
             && 'var(--select-color' }}
-            onClick={()=>{this.setState({game_level:'easy'})}}>
+            onClick={()=>{this.setState({game_level:'easy'})}}
+            id={this.state.language==='en' && 'eng'}>
               {this.content[this.state.language]['button1']} </button>
+              
               <button style={{ color: this.state.game_level==='medium'
             && 'var(--bg-color)', background: this.state.game_level==='medium'
             && 'var(--select-color' }}
-            onClick={()=>{this.setState({game_level:'medium'})}}>
+            onClick={()=>{this.setState({game_level:'medium'})}}
+            id={this.state.language==='en' && 'eng'}>
               {this.content[this.state.language]['button2']}</button>
+              
               <button style={{ color: this.state.game_level==='hard'
             && 'var(--bg-color)', background: this.state.game_level==='hard'
             && 'var(--select-color' }}
-            onClick={()=>{this.setState({game_level:'hard'})}}>
+            onClick={()=>{this.setState({game_level:'hard'})}}
+            id={this.state.language==='en' && 'eng'}>
                 {this.content[this.state.language]['button3']}</button>
+            
             </div>
+
             <div className='game-level language'>
             <button style={{ color: this.state.language==='en'
             && 'var(--bg-color)', background: this.state.language==='en'
             && 'var(--select-color' }}
-            onClick={()=>{this.setState({language:'en'})}}>
+            onClick={()=>{this.setState({language:'en'})}} id='eng'>
               Enghlish</button>
               <button style={{ color: this.state.language==='fa'
             && 'var(--bg-color)', background: this.state.language==='fa'

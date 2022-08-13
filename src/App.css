@@ -160,8 +160,12 @@
 }
 
 @font-face {
-  font-family: mitra;
-  src: url(fonts/mitra.ttf);
+  font-family: koodak;
+  src: url(fonts/koodakoutline.ttf);
+}
+@font-face {
+  font-family: tanha;
+  src: url(fonts/tanha.woff);
 }
 
 .game-level {
@@ -183,9 +187,12 @@
   border: none;
   border-radius: 1vmin;
   font-size: 60%;
-  font-family: cursive;
-  font-family: mitra;
+  font-family: tanha;
   
+}
+
+#eng {
+  font-family: cursive;
 }
 
 .language {
