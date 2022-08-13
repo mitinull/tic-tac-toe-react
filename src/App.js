@@ -2,8 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import { MdRestartAlt, MdSettings } from 'react-icons/md';
 import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
-import {RiBrushFill, RiCloseLine} from 'react-icons/ri';
-import {GiSpeaker,GiSpeakerOff} from 'react-icons/gi';
+import {RiBrushFill, RiCloseLine, RiRestartFill}
+from 'react-icons/ri';
 
 
 
@@ -228,6 +228,8 @@ class App extends Component {
             )}
           </div>}
 
+          {/* WIN PAGE */}
+
           {/* SETTING */}
           {this.state.setting_open && <div id="setting">
             <div className='theme setting-content' >
@@ -241,10 +243,10 @@ class App extends Component {
               onClick={() => {setTheme(themes[2]);this.setState({themeIndex:2});}}>
               {this.state.themeIndex===2 && <RiBrushFill id='brush'/>}</div>
 
-              {this.state.sound_on? <GiSpeaker className='theme-con'
-              onClick={() => {this.setState({sound_on:false})}}/>:
-              <GiSpeakerOff className='theme-con'
-              onClick={() => {this.setState({sound_on:true})}}/>}
+              <RiRestartFill className='theme-con' onClick={() => 
+              {this.reset(); this.setState({setting_open:false})}}
+              id='restart'/>
+              
 
               <RiCloseLine className='theme-con'
               onClick={() => {this.setState({setting_open:false});
