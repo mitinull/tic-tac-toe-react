@@ -4,15 +4,15 @@
   --item-color: #b0b8b4;
   --select-color: #FC766A;
 }
-:root.theme2 {
-  --bg-color: #28334AFF;
-  --item-color: #F65058FF;
-  --select-color: #FBDE44FF;
-}
 :root.theme3 {
-  --bg-color: #D3D0CBFF;
-  --item-color: rgb(27, 113, 159);
-  --select-color: rgb(59, 160, 31);
+  --bg-color: rgb(0, 0, 0);
+  --item-color: rgb(62, 62, 62);
+  --select-color: rgb(83, 146, 82);
+}
+:root.theme2 {
+  --bg-color: rgb(125, 185, 220);
+  --item-color: rgb(33, 106, 190);
+  --select-color: rgb(34, 34, 181);
 }
 
 .App {
@@ -181,10 +181,10 @@
   background-color: #b0b8b4;
 }
 #theme2 {
-  background-color: #F65058FF;
+  background-color: rgb(27, 113, 159);
 }
 #theme3 {
-  background-color: rgb(27, 113, 159);
+  background-color: rgb(62, 62, 62);
 }
 
 
