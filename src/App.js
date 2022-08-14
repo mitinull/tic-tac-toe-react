@@ -35,7 +35,7 @@ class App extends Component {
     setting_open: false,
     themeIndex: 0,
     sound_on: true,
-    game_level: 'hard',
+    game_level: 'medium',
   }
 
   content = {
