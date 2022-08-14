@@ -5,6 +5,7 @@ import {BsPeopleFill, BsPersonFill} from 'react-icons/bs';
 import {RiBrushFill, RiCloseLine,
    RiRestartLine, RiRestartFill}
 from 'react-icons/ri';
+import hardIndex from './minimax.js';
 
 
 
@@ -34,7 +35,7 @@ class App extends Component {
     setting_open: false,
     themeIndex: 0,
     sound_on: true,
-    game_level: 'medium',
+    game_level: 'hard',
   }
 
   content = {
@@ -70,7 +71,7 @@ class App extends Component {
    
   }
 
-  // add a easy bot to the board
+  // add a bot to the board
   addBot = () => {
     if (this.state.gameOver) {
       return;
@@ -85,6 +86,9 @@ class App extends Component {
       Math.floor(Math.random() * empty_inexes.length)];
     if( this.state.game_level === 'medium' ) {
       index = this.mediumIndex(index);
+    }
+    if( this.state.game_level === 'hard' ) {
+      index = hardIndex(this.state.board, this.state.player);
     }
     // console.log(index);
     if (this.state.board[index] === '') {
@@ -372,6 +376,7 @@ class App extends Component {
     }
     return i;
   }
+  // End medium index function
 
   // change the player
   changePlayer = () => {
