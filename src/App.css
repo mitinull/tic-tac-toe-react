@@ -6,13 +6,13 @@
 }
 :root.theme3 {
   --bg-color: rgb(0, 0, 0);
-  --item-color: rgb(72, 85, 109);
-  --select-color: rgb(83, 146, 82);
+  --item-color: #063852;
+  --select-color: #E6DF44;
 }
 :root.theme2 {
-  --bg-color: rgb(125, 185, 220);
-  --item-color: rgb(33, 80, 190);
-  --select-color: rgb(34, 34, 181);
+  --bg-color: #75B1A9;
+  --item-color: #011A27;
+  --select-color: #4B7447;
 }
 
 .App {
@@ -142,6 +142,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--item-color);
+  background-color: var(--bg-color);
 }
 
 #restart {
@@ -178,13 +180,13 @@
 }
 
 #theme1 {
-  background-color: #b0b8b4;
+  background-color: #184A45;
 }
 #theme2 {
-  background-color: rgb(33, 80, 190);
+  background-color: #75B1A9;
 }
 #theme3 {
-  background-color: rgb(72, 85, 109);
+  background-color: rgb(0, 0, 0);
 }
 
 
@@ -316,7 +318,8 @@
   .theme-con:hover {
     transform: scale(1.1);
     border-color: var(--select-color);
-    color: var(--select-color);
+    /* color: var(--select-color); */
+    background-color: var(--select-color);
     transition: .4s;
   }
   .game-level button:hover {
