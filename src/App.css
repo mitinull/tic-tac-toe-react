@@ -6,8 +6,8 @@
 }
 :root.theme3 {
   --bg-color: rgb(0, 0, 0);
-  --item-color: #063852;
-  --select-color: #E6DF44;
+  --item-color: #5D535E;
+  --select-color: #EC96A4;
 }
 :root.theme2 {
   --bg-color: #75B1A9;
