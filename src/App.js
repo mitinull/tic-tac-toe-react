@@ -86,7 +86,7 @@ class App extends Component {
     if( this.state.game_level === 'medium' ) {
       index = this.mediumIndex(index);
     }
-    console.log(index);
+    // console.log(index);
     if (this.state.board[index] === '') {
       let newBoard = this.state.board;
       newBoard[index] = this.state.player;
@@ -507,7 +507,7 @@ class App extends Component {
           { setting_opened = true &&
           !this.state.setting_open && this.state.gameOver && 
           <div id="setting">
-            <div className=' winpage-content' id={this.state.language==='en' && 'eng'} >
+            <div className=' winpage-content' id={this.state.language==='en' ? 'eng' : ''} >
               { this.state.language==='en'?
                 this.state.winner === 'tie' || this.state.winner === '' ?
                 <span>Draw!</span> :
@@ -555,21 +555,21 @@ class App extends Component {
             && 'var(--bg-color)', background: this.state.game_level==='easy'
             && 'var(--select-color' }}
             onClick={()=>{this.setState({game_level:'easy'})}}
-            id={this.state.language==='en' && 'eng'}>
+            id={this.state.language==='en' ? 'eng' : ''}>
               {this.content[this.state.language]['button1']} </button>
               
               <button style={{ color: this.state.game_level==='medium'
             && 'var(--bg-color)', background: this.state.game_level==='medium'
             && 'var(--select-color' }}
             onClick={()=>{this.setState({game_level:'medium'})}}
-            id={this.state.language==='en' && 'eng'}>
+            id={this.state.language==='en'  ? 'eng' : ''}>
               {this.content[this.state.language]['button2']}</button>
               
               <button style={{ color: this.state.game_level==='hard'
             && 'var(--bg-color)', background: this.state.game_level==='hard'
             && 'var(--select-color' }}
             onClick={()=>{this.setState({game_level:'hard'})}}
-            id={this.state.language==='en' && 'eng'}>
+            id={this.state.language==='en'  ? 'eng' : ''}>
                 {this.content[this.state.language]['button3']}</button>
             
             </div>
