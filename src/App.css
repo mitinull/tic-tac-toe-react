@@ -6,7 +6,7 @@
 }
 :root.theme3 {
   --bg-color: rgb(0, 0, 0);
-  --item-color: rgb(62, 62, 62);
+  --item-color: rgb(72, 85, 109);
   --select-color: rgb(83, 146, 82);
 }
 :root.theme2 {
@@ -181,10 +181,10 @@
   background-color: #b0b8b4;
 }
 #theme2 {
-  background-color: rgb(27, 113, 159);
+  background-color: rgb(33, 106, 190);
 }
 #theme3 {
-  background-color: rgb(62, 62, 62);
+  background-color: rgb(72, 85, 109);
 }
 
 
