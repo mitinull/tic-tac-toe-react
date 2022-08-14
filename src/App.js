@@ -70,7 +70,7 @@ class App extends Component {
    
   }
 
-  // add a bot to the board
+  // add a easy bot to the board
   addBot = () => {
     if (this.state.gameOver) {
       return;
@@ -81,25 +81,296 @@ class App extends Component {
         empty_inexes.push(index);
       }
     } )
-    //  = this.state.board.map((square, index) => {
-    //   // if (square === '') {
-    //   //   return index;
-    //   // }
-    // })//.filter(index => index !== undefined);
-    let index = Math.floor(Math.random() * empty_inexes.length);
-    if (this.state.board[empty_inexes[index]] === '') {
+    let index = empty_inexes[
+      Math.floor(Math.random() * empty_inexes.length)];
+    if( this.state.game_level === 'medium' ) {
+      index = this.mediumIndex(index);
+    }
+    console.log(index);
+    if (this.state.board[index] === '') {
       let newBoard = this.state.board;
-      newBoard[empty_inexes[index]] = this.state.player;
+      newBoard[index] = this.state.player;
       this.setState({
         board: newBoard
       });
       this.checkWinner();
       this.changePlayer();
     }
-    else {
-      //throw error no empty cell
-      // console.error('no empty cell');
+  }
+
+  // add a medium bot to the board
+  mediumIndex = (i) => {
+    if (this.state.board[0] === '') {
+      if (this.state.board[1] === this.state.player
+        && this.state.board[2] === this.state.player) {
+          return 0;
+      }
+      if (this.state.board[3] === this.state.player
+        && this.state.board[6] === this.state.player) {
+          return 0;
+      }
+      if (this.state.board[4] === this.state.player
+        && this.state.board[8] === this.state.player) {
+          return 0;
+      }
     }
+    if (this.state.board[1] === '') {
+      if (this.state.board[0] === this.state.player
+        && this.state.board[2] === this.state.player) {
+          return 1;
+      }
+      if (this.state.board[4] === this.state.player
+        && this.state.board[7] === this.state.player) {
+          return 1;
+      }
+    }
+    if (this.state.board[2] === '') {
+      if (this.state.board[0] === this.state.player
+        && this.state.board[1] === this.state.player) {
+          return 2;
+      }
+      if (this.state.board[5] === this.state.player
+        && this.state.board[8] === this.state.player) {
+          return 2;
+      }
+      if (this.state.board[4] === this.state.player
+        && this.state.board[6] === this.state.player) {
+          return 2;
+      }
+    }
+    if (this.state.board[3] === '') {
+      if (this.state.board[0] === this.state.player
+        && this.state.board[6] === this.state.player) {
+          return 3;
+      }
+    }
+    if (this.state.board[4] === '') {
+      if (this.state.board[1] === this.state.player
+        && this.state.board[7] === this.state.player) {
+          return 4;
+      }
+      if (this.state.board[0] === this.state.player
+        && this.state.board[8] === this.state.player) {
+          return 4;
+      }
+      if (this.state.board[2] === this.state.player
+        && this.state.board[6] === this.state.player) {
+          return 4;
+      }
+      if (this.state.board[3] === this.state.player
+        && this.state.board[5] === this.state.player) {
+          return 4;
+      }
+    }
+    if (this.state.board[5] === '') {
+      if (this.state.board[2] === this.state.player
+        && this.state.board[8] === this.state.player) {
+          return 5;
+      }
+      if (this.state.board[3] === this.state.player
+        && this.state.board[4] === this.state.player) {
+          return 5;
+      }
+    }
+    if (this.state.board[6] === '') {
+      if (this.state.board[0] === this.state.player
+        && this.state.board[3] === this.state.player) {
+          return 6;
+      }
+      if (this.state.board[7] === this.state.player
+        && this.state.board[8] === this.state.player) {
+          return 6;
+      }
+      if (this.state.board[4] === this.state.player
+        && this.state.board[2] === this.state.player) {
+          return 6;
+      }
+    }
+    if (this.state.board[7] === '') {
+      if (this.state.board[1] === this.state.player
+        && this.state.board[4] === this.state.player) {
+          return 7;
+      }
+      if (this.state.board[6] === this.state.player
+        && this.state.board[8] === this.state.player) {
+          return 7;
+      }
+    }
+    if (this.state.board[8] === '') {
+      if (this.state.board[2] === this.state.player
+        && this.state.board[5] === this.state.player) {
+          return 8;
+      }
+      if (this.state.board[6] === this.state.player
+        && this.state.board[7] === this.state.player) {
+          return 8;
+      }
+    }
+
+    // avoid opponent winning
+    if (this.state.board[0] === '') {
+      if (this.state.board[1] !== this.state.player
+        && this.state.board[1] !== ''
+        && this.state.board[2] !== this.state.player
+        && this.state.board[2] !== '') {
+          return 0;
+      }
+      if (this.state.board[3] !== this.state.player
+        && this.state.board[3] !== ''
+        && this.state.board[6] !== this.state.player
+        && this.state.board[6] !== '') {
+          return 0;
+      }
+      if (this.state.board[4] !== this.state.player
+        && this.state.board[4] !== ''
+        && this.state.board[8] !== this.state.player
+        && this.state.board[8] !== '') {
+          return 0;
+      }
+    }
+    if (this.state.board[1] === '') {
+      if (this.state.board[0] !== this.state.player
+        && this.state.board[0] !== ''
+        && this.state.board[2] !== this.state.player
+        && this.state.board[2] !== '') {
+          return 1;
+      }
+      if (this.state.board[4] !== this.state.player
+        && this.state.board[4] !== ''
+        && this.state.board[7] !== this.state.player
+        && this.state.board[7] !== '') {
+          return 1;
+      }
+    }
+    if (this.state.board[2] === '') {
+      if (this.state.board[0] !== this.state.player
+        && this.state.board[0] !== ''
+        && this.state.board[1] !== this.state.player
+        && this.state.board[1] !== '') {
+          return 2;
+      }
+      if (this.state.board[5] !== this.state.player
+        && this.state.board[5] !== ''
+        && this.state.board[8] !== this.state.player
+        && this.state.board[8] !== '') {
+          return 2;
+      }
+      if (this.state.board[4] !== this.state.player
+        && this.state.board[4] !== ''
+        && this.state.board[6] !== this.state.player
+        && this.state.board[6] !== '') {
+          return 2;
+      }
+    }
+    if (this.state.board[3] === '') {
+      if (this.state.board[0] !== this.state.player
+        && this.state.board[0] !== ''
+        && this.state.board[6] !== this.state.player
+        && this.state.board[6] !== '') {
+          return 3;
+      }
+      if (this.state.board[4] !== this.state.player
+        && this.state.board[4] !== ''
+        && this.state.board[5] !== this.state.player
+        && this.state.board[5] !== '') {
+          return 3;
+      }
+    }
+    if (this.state.board[4] === '') {
+      if (this.state.board[1] !== this.state.player
+        && this.state.board[1] !== ''
+        && this.state.board[7] !== this.state.player
+        && this.state.board[7] !== '') {
+          return 4;
+      }
+      if (this.state.board[3] !== this.state.player
+        && this.state.board[3] !== ''
+        && this.state.board[5] !== this.state.player
+        && this.state.board[5] !== '') {
+          return 4;
+      }
+      if (this.state.board[0] !== this.state.player
+        && this.state.board[0] !== ''
+        && this.state.board[8] !== this.state.player
+        && this.state.board[8] !== '') {
+          return 4;
+      }
+      if (this.state.board[2] !== this.state.player
+        && this.state.board[2] !== ''
+        && this.state.board[6] !== this.state.player
+        && this.state.board[6] !== '') {
+          return 4;
+      }
+    }
+    if (this.state.board[5] === '') {
+      if (this.state.board[2] !== this.state.player
+        && this.state.board[2] !== ''
+        && this.state.board[8] !== this.state.player
+        && this.state.board[8] !== '') {
+          return 5;
+      }
+      if (this.state.board[4] !== this.state.player
+        && this.state.board[4] !== ''
+        && this.state.board[3] !== this.state.player
+        && this.state.board[3] !== '') {
+          return 5;
+      }
+    }
+    if (this.state.board[6] === '') {
+      if (this.state.board[0] !== this.state.player
+        && this.state.board[0] !== ''
+        && this.state.board[3] !== this.state.player
+        && this.state.board[3] !== '') {
+          return 6;
+      }
+      if (this.state.board[7] !== this.state.player
+        && this.state.board[7] !== ''
+        && this.state.board[8] !== this.state.player
+        && this.state.board[8] !== '') {
+          return 6;
+      }
+      if (this.state.board[4] !== this.state.player
+        && this.state.board[4] !== ''
+        && this.state.board[2] !== this.state.player
+        && this.state.board[2] !== '') {
+          return 6;
+      }
+    }
+    if (this.state.board[7] === '') {
+      if (this.state.board[1] !== this.state.player
+        && this.state.board[1] !== ''
+        && this.state.board[4] !== this.state.player
+        && this.state.board[4] !== '') {
+          return 7;
+      }
+      if (this.state.board[6] !== this.state.player
+        && this.state.board[6] !== ''
+        && this.state.board[8] !== this.state.player
+        && this.state.board[8] !== '') {
+          return 7;
+      }
+    }
+    if (this.state.board[8] === '') {
+      if (this.state.board[2] !== this.state.player
+        && this.state.board[2] !== ''
+        && this.state.board[5] !== this.state.player
+        && this.state.board[5] !== '') {
+          return 8;
+      }
+      if (this.state.board[6] !== this.state.player
+        && this.state.board[6] !== ''
+        && this.state.board[7] !== this.state.player
+        && this.state.board[7] !== '') {
+          return 8;
+      }
+      if (this.state.board[4] !== this.state.player
+        && this.state.board[4] !== ''
+        && this.state.board[0] !== this.state.player
+        && this.state.board[0] !== '') {
+          return 8;
+      }
+    }
+    return i;
   }
 
   // change the player
