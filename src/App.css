@@ -11,7 +11,7 @@
 }
 :root.theme2 {
   --bg-color: rgb(125, 185, 220);
-  --item-color: rgb(33, 106, 190);
+  --item-color: rgb(33, 80, 190);
   --select-color: rgb(34, 34, 181);
 }
 
@@ -181,7 +181,7 @@
   background-color: #b0b8b4;
 }
 #theme2 {
-  background-color: rgb(33, 106, 190);
+  background-color: rgb(33, 80, 190);
 }
 #theme3 {
   background-color: rgb(72, 85, 109);
