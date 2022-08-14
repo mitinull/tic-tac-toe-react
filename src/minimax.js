@@ -6,21 +6,17 @@ function opponent(p) {
 
 function findBestMove(b, p) {
     let board = [...b];
-    console.log('board: ', board);
-    console.log('player: ', p);
     let bestMoves = [];
     let bestScore = p===MAXIMIZE_PLAYER ? -Infinity : Infinity;
     for (let i = 0; i < board.length; i++) {
         if (board[i] === '') {
             board[i] = p;
             let score = minimax(board, opponent(p));
-            console.log('score: ', score);
             board[i] = '';
             if (p === MAXIMIZE_PLAYER) {
                 if (score > bestScore) {
                     bestScore = score;
                     bestMoves = [i];
-                    // console.log(score);
                 }
                 else if (score === bestScore) {
                     bestMoves.push(i);
@@ -30,7 +26,6 @@ function findBestMove(b, p) {
                 if (score < bestScore) {
                     bestScore = score;
                     bestMoves = [i];
-                    // console.log(score);
                 }
                 else if (score === bestScore) {
                     bestMoves.push(i);
@@ -38,7 +33,6 @@ function findBestMove(b, p) {
             }
         }
     }
-    console.log('bestMoves: ', bestMoves);
     return bestMoves[Math.floor(Math.random() * bestMoves.length)];
 }
 export default findBestMove;

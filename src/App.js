@@ -90,7 +90,6 @@ class App extends Component {
     if( this.state.game_level === 'hard' ) {
       index = hardIndex(this.state.board, this.state.player);
     }
-    // console.log(index);
     if (this.state.board[index] === '') {
       let newBoard = this.state.board;
       newBoard[index] = this.state.player;
